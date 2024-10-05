@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Consultoria - Yn Consultoria Logística</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Solicitação de Consultoria</h1>
+        <form id="solicitacaoForm" class="form">
+            <fieldset>
+                <legend>Cadastro da Solicitação</legend>
+                <div class="form-group">
+                    <label for="nomeSolicitante">Nome do Solicitante</label>
+                    <input type="text" id="nomeSolicitante" required>
+                </div>
+                <div class="form-group">
+                    <label for="cargoSolicitante">Cargo do Solicitante</label>
+                    <input type="text" id="cargoSolicitante" required>
+                </div>
+                <div class="form-group">
+                    <label for="nomeEmpresa">Nome da Empresa</label>
+                    <input type="text" id="nomeEmpresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="cnpj">CNPJ</label>
+                    <input type="text" id="cnpj" required pattern="\d{14}" title="Digite um CNPJ válido com 14 dígitos">
+                </div>
+                <div class="form-group">
+                    <label for="setor">Setor/Área de Solicitação</label>
+                    <input type="text" id="setor" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefoneContato">Telefone de Contato</label>
+                    <input type="tel" id="telefoneContato" required pattern="\d{11}" title="Digite um número de telefone válido com 11 dígitos">
+                </div>
+                <div class="form-group">
+                    <label for="emailSolicitante">E-mail do Solicitante</label>
+                    <input type="email" id="emailSolicitante" required>
+                </div>
+                <div class="form-group">
+                    <label for="dataSolicitacao">Data da Solicitação</label>
+                    <input type="date" id="dataSolicitacao" required>
+                </div>
+                <div class="form-group">
+                    <label for="urgencia">Urgência da Solicitação</label>
+                    <select id="urgencia" required>
+                        <option value="baixa">Baixa</option>
+                        <option value="media">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="observacoes">Observações Adicionais</label>
+                    <textarea id="observacoes" rows="3"></textarea>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Informações Sobre a Queixa</legend>
+                <div class="form-group">
+                    <label for="problemaPrincipal">Problema Principal</label>
+                    <input type="text" id="problemaPrincipal" required>
+                </div>
+                <div class="form-group">
+                    <label for="descricaoDetalhada">Descrição Detalhada</label>
+                    <textarea id="descricaoDetalhada" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="impacto">Impacto do Problema</label>
+                    <textarea id="impacto" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="outrosProblemas">Outros Problemas Relacionados</label>
+                    <textarea id="outrosProblemas" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="perguntaOpcional">Pergunta Opcional</label>
+                    <input type="text" id="perguntaOpcional">
+                </div>
+            </fieldset>
+
+            <button type="submit">Enviar Solicitação</button>
+        </form>
+        <div id="mensagemSucesso" class="sucesso" style="display: none;">
+            Solicitação enviada com sucesso!
+        </div>
+    </div>
+
+    <script src="firebase-config.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
