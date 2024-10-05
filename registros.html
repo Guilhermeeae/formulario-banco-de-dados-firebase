@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros de Solicitações</title>
+    <link rel="stylesheet" href="registros.css">
+</head>
+<body>
+    <header>
+        <h1>Registros de Solicitações</h1>
+    </header>
+
+    <section id="registrosContainer">
+        <table id="registrosTable">
+            <thead>
+                <tr>
+                    <th>Nome do Solicitante</th>
+                    <th>Cargo do Solicitante</th>
+                    <th>Nome da Empresa</th>
+                    <th>CNPJ</th>
+                    <th>Setor/Área de Solicitação</th>
+                    <th>Telefone de Contato</th>
+                    <th>E-mail do Solicitante</th>
+                    <th>Data da Solicitação</th>
+                    <th>Urgência</th>
+                    <th>Problema Principal</th>
+                    <th>Descrição Detalhada</th>
+                    <th>Impacto do Problema</th>
+                    <th>Outros Problemas</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="registrosBody">
+                <!-- Registros serão inseridos aqui dinamicamente -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Modal para editar o registro -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Solicitação</h2>
+            <form id="editForm">
+                <label for="editNomeSolicitante">Nome do Solicitante:</label>
+                <input type="text" id="editNomeSolicitante" required>
+                
+                <label for="editCargoSolicitante">Cargo do Solicitante:</label>
+                <input type="text" id="editCargoSolicitante" required>
+                
+                <label for="editNomeEmpresa">Nome da Empresa:</label>
+                <input type="text" id="editNomeEmpresa" required>
+                
+                <label for="editCNPJ">CNPJ:</label>
+                <input type="text" id="editCNPJ" required>
+                
+                <label for="editSetor">Setor/Área de Solicitação:</label>
+                <input type="text" id="editSetor" required>
+                
+                <label for="editTelefone">Telefone de Contato:</label>
+                <input type="text" id="editTelefone" required>
+                
+                <label for="editEmail">E-mail do Solicitante:</label>
+                <input type="email" id="editEmail" required>
+                
+                <label for="editDataSolicitacao">Data da Solicitação:</label>
+                <input type="date" id="editDataSolicitacao" required>
+                
+                <label for="editUrgencia">Urgência:</label>
+                <select id="editUrgencia" required>
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+                </select>
+                
+                <label for="editProblemaPrincipal">Problema Principal:</label>
+                <input type="text" id="editProblemaPrincipal" required>
+                
+                <label for="editDescricao">Descrição Detalhada:</label>
+                <textarea id="editDescricao" required></textarea>
+                
+                <label for="editImpacto">Impacto do Problema:</label>
+                <textarea id="editImpacto" required></textarea>
+                
+                <label for="editOutrosProblemas">Outros Problemas:</label>
+                <textarea id="editOutrosProblemas" required></textarea>
+
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="registros.js"></script>
+</body>
+</html>
